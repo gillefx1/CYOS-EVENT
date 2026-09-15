@@ -47,9 +47,15 @@
         <h1>Contactez-nous</h1>
         <p class="contact-subtitle">Une idée, un projet ? Discutons ensemble de votre futur événement.</p>
 
-        <!-- Formulaire de contact -->
-        <form action="#" method="POST" class="contact-form">
+        <!-- Formulaire de contact configuré pour Web3Forms -->
+        <form action="https://web3forms.com" method="POST" class="contact-form">
             
+            <!-- Ta clé d'accès personnelle invisible -->
+            <input type="hidden" name="access_key" value="77ef1304-90e8-4daf-a915-2f1dd6f9de51">
+            
+            <!-- Sujet de l'e-mail que tu vas recevoir dans ta boîte de réception -->
+            <input type="hidden" name="subject" value="Nouveau message depuis le site CYOS Event">
+
             <!-- Ligne Nom & Prénom -->
             <div class="form-row">
                 <div class="form-group">
@@ -81,6 +87,9 @@
                 <label for="message">Votre message</label>
                 <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet d'événement en quelques lignes..." required></textarea>
             </div>
+
+            <!-- Captcha anti-spam invisible (optionnel mais fortement recommandé) -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <!-- Bouton d'envoi -->
             <button type="submit" class="btn-submit">Envoyer la demande</button>
