@@ -75,37 +75,32 @@
 
 <body>
 
-<header>
-    <div class="logo-container">
-        <!-- L'image est maintenant entourée d'un lien vers ton Hub principal -->
+<!-- Menu de Navigation Harmonisé (Style Heritage avec Menu Déroulant Event) -->
+<header class="main-header">
+    <div class="logo">
         <a href="https://cyos.be">
             <img src="assets/images/logo.png" alt="Logo CYOS" class="logo"> 
         </a>
     </div>
-    <nav class="navbar">
-        <button class="burger-menu" aria-label="Ouvrir le menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">À propos de CYOS</a></li>
-            <li class="dropdown mobile-click">
-                <a href="services.html" class="dropdown-toggle">Nos Services <span class="arrow"></span></a>
-                <ul class="submenu">
-                    <li><a href="mariage.html">Mariage</a></li>
-                    <li><a href="anniversaire.html">Anniversaire</a></li>
-                    <li><a href="bapteme-communion.html">Baptême / Communion</a></li>
-                    <li><a href="babyshower.html">Baby Shower</a></li>
-                </ul>
-            </li>
-            <!-- La classe active est positionnée sur le bouton Contact -->
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
+    <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos de CYOS</a>
+        
+        <!-- L'élément Nos Services avec son menu déroulant -->
+        <div class="dropdown">
+            <a href="services.html" class="dropdown-toggle">Nos Services <span class="arrow">▼</span></a>
+            <ul class="submenu">
+                <li><a href="mariage.html">Mariage</a></li>
+                <li><a href="anniversaire.html">Anniversaire</a></li>
+                <li><a href="bapteme-communion.html">Baptême / Communion</a></li>
+                <li><a href="babyshower.html">Baby Shower</a></li>
+            </ul>
+        </div>
+        
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
+
 
 <main>
     <!-- Wrapper global en deux colonnes -->
