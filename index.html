@@ -14,35 +14,36 @@
            ========================================================================== */
         .hero-section {
             background: linear-gradient(rgba(252, 251, 250, 0.85), rgba(252, 251, 250, 0.85)), url('https://unsplash.com') center/cover;
-            padding: 90px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            letter-spacing: 4px;
+            font-size: 3.2rem;
+            letter-spacing: 3px;
             font-weight: 300;
             text-transform: uppercase;
             color: #1a1a19;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
         .hero-content .hero-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #8c857b; /* Teinte taupe/bronze CYOS */
-            margin-bottom: 30px;
+            letter-spacing: 3px;
+            color: #8c857b; /* Teinte taupe/bronze CYOS d'origine */
+            margin-bottom: 35px;
             font-weight: 400;
         }
         .hero-content .hero-description {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            max-width: 650px;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            max-width: 700px;
+            line-height: 1.8;
             color: #595754;
             font-weight: 300;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 45px auto;
         }
         .hero-buttons {
             display: flex;
@@ -65,29 +66,29 @@
             transition: all 0.3s ease;
             box-sizing: border-box;
         }
-        /* Bouton Plein (Découvrir nos prestations) */
+        /* Bouton Plein Doré/Bronze d'origine (Découvrir nos prestations) */
         .hero-buttons .btn-primary {
-            background-color: #8c857b;
+            background-color: #bfa38a; /* Restauration de ta couleur beige/doré d'origine */
             color: #ffffff;
-            border: 1px solid #8c857b;
+            border: 1px solid #bfa38a;
         }
         .hero-buttons .btn-primary:hover {
-            background-color: #1a1a19;
-            border-color: #1a1a19;
+            background-color: #8c857b;
+            border-color: #8c857b;
         }
         /* Bouton Épuré Contour (Discuter de mon projet) */
         .hero-buttons .btn-secondary {
             background-color: transparent;
-            color: #8c857b;
-            border: 1px solid #8c857b;
+            color: #bfa38a;
+            border: 1px solid #bfa38a;
         }
         .hero-buttons .btn-secondary:hover {
-            background-color: #8c857b;
+            background-color: #bfa38a;
             color: #ffffff;
         }
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.4rem; }
-            .hero-content .hero-subtitle { font-size: 0.95rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content .hero-subtitle { font-size: 1rem; }
             .hero-buttons .btn { width: 100%; max-width: 280px; }
         }
     </style>
@@ -102,32 +103,34 @@
             <img src="assets/images/logo.png" alt="Logo CYOS" class="logo"> 
         </a>
     </div>
-    <nav class="nav-links">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="about.html">À propos de CYOS</a>
-        
-        <!-- L'élément Nos Services avec son menu déroulant -->
-        <div class="dropdown">
-            <a href="services.html" class="dropdown-toggle">Nos Services <span class="arrow">▼</span></a>
-            <ul class="submenu">
-                <li><a href="mariage.html">Mariage</a></li>
-                <li><a href="anniversaire.html">Anniversaire</a></li>
-                <li><a href="bapteme-communion.html">Baptême / Communion</a></li>
-                <li><a href="babyshower.html">Baby Shower</a></li>
-            </ul>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html" class="active">Accueil</a>
+            <a href="about.html">À propos de CYOS</a>
+            
+            <!-- L'élément Nos Services avec son menu déroulant -->
+            <div class="dropdown">
+                <a href="services.html" class="dropdown-toggle">Nos Services <span class="arrow">▼</span></a>
+                <ul class="submenu">
+                    <li><a href="mariage.html">Mariage</a></li>
+                    <li><a href="anniversaire.html">Anniversaire</a></li>
+                    <li><a href="bapteme-communion.html">Baptême / Communion</a></li>
+                    <li><a href="babyshower.html">Baby Shower</a></li>
+                </ul>
+            </div>
+            
+            <a href="contact.html">Contact</a>
         </div>
-        
-        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
 <main class="home-main">
-    <!-- Section 1 : Bannière de bienvenue (Hero) réalignée sur le style Heritage -->
+    <!-- Section d'accueil réorganisée selon tes souhaits -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1>CYOS</h1>
-            <p class="hero-subtitle">Choose Your Own Story</p>
-            <p class="hero-description">De l'idée originale à la coordination du jour J, nous orchestrons vos plus beaux moments de vie avec élégance, raffinement et sérénité.</p>
+            <h1>Choose Your Own Story</h1>
+            <p class="hero-subtitle">L'art d'orchestrer vos plus beaux moments de vie.</p>
+            <p class="hero-description">De l'idée originale à la coordination du jour J, nous façonnons des événements uniques et sur-mesure avec une élégance et un raffinement qui vous ressemblent.</p>
             <div class="hero-buttons">
                 <a href="services.html" class="btn btn-primary">Découvrir nos prestations</a>
                 <a href="contact.html" class="btn btn-secondary">Discuter de mon projet</a>
