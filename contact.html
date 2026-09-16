@@ -36,7 +36,7 @@
                     <li><a href="babyshower.html">Baby Shower</a></li>
                 </ul>
             </li>
-            <!-- Changement ici : La classe active est positionnée sur le bouton Contact -->
+            <!-- La classe active est positionnée sur le bouton Contact -->
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
@@ -47,14 +47,17 @@
         <h1>Contactez-nous</h1>
         <p class="contact-subtitle">Une idée, un projet ? Discutons ensemble de votre futur événement.</p>
 
-        <!-- Formulaire de contact configuré pour Web3Forms -->
+        <!-- Formulaire de contact configuré correctement pour Web3Forms -->
         <form action="https://web3forms.com" method="POST" class="contact-form">
             
-            <!-- Ta clé d'accès personnelle invisible -->
-            <input type="hidden" name="access_key" value="77ef1304-90e8-4daf-a915-2f1dd6f9de51">
+            <!-- Ta clé d'accès personnelle active pour CYOS Event -->
+            <input type="hidden" name="access_key" value="067b24d3-95d0-45a0-8a62-91ba9dc1f00f">
             
             <!-- Sujet de l'e-mail que tu vas recevoir dans ta boîte de réception -->
             <input type="hidden" name="subject" value="Nouveau message depuis le site CYOS Event">
+
+            <!-- Redirection automatique après envoi vers la page de remerciement locale -->
+            <input type="hidden" name="redirect" value="https://cyos-event.be">
 
             <!-- Ligne Nom & Prénom -->
             <div class="form-row">
@@ -88,7 +91,7 @@
                 <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet d'événement en quelques lignes..." required></textarea>
             </div>
 
-            <!-- Captcha anti-spam invisible (optionnel mais fortement recommandé) -->
+            <!-- Captcha anti-spam invisible -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <!-- Bouton d'envoi -->
@@ -113,7 +116,7 @@
 
         <p>&copy; 2026 CYOS - Event. Tous droits réservés.</p>
         
-        <!-- Liens pour une ouverture directe sur le site actuel -->
+        <!-- Liens réglementaires -->
         <div class="footer-links">
             <a href="mentions-legales.html">Mentions Légales</a> | 
             <a href="cgv.html">CGV</a> | 
@@ -122,7 +125,6 @@
         </div>
     </div>
 </footer>
-
 
 <script src="assets/js/script.js"></script>
 
