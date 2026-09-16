@@ -788,3 +788,137 @@ footer {
         font-size: 22px;
     }
 }
+/* ==========================================================================
+   HARMONISATION EN-TÊTE (STYLE HERITAGE + DROPDOWN EVENT)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    background-color: #ffffff; /* Fond clair pour CYOS Event */
+    border-bottom: 1px solid rgba(51, 50, 48, 0.08);
+}
+
+.main-header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links > a, 
+.dropdown-toggle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8c857b; /* Teinte taupe douce d'Heritage */
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links > a:hover, 
+.nav-links > a.active,
+.dropdown:hover .dropdown-toggle,
+.dropdown-toggle.active {
+    color: #1a1a19; /* Devient plus sombre et affirmé au survol */
+}
+
+/* Gestion du menu déroulant (Dropdown) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .arrow {
+    font-size: 0.6rem;
+    margin-left: 4px;
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Style du sous-menu caché par défaut */
+.submenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+    padding: 15px 0;
+    list-style: none;
+    z-index: 1000;
+    border: 1px solid rgba(51, 50, 48, 0.06);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.submenu li a {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    padding: 10px 25px;
+    color: #595754;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.submenu li a:hover {
+    background-color: #fcfbfa;
+    color: #1a1a19;
+    padding-left: 30px; /* Petit effet de décalage élégant au survol */
+}
+
+/* Déclenchement de l'affichage au survol de la souris (Hover) */
+.dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg); /* La flèche se retourne élégamment */
+}
+
+/* Adaptation Mobile & Tablette tactile */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .submenu {
+        position: static;
+        transform: none !important;
+        box-shadow: none;
+        border: none;
+        border-left: 1px solid rgba(51, 50, 48, 0.1);
+        margin-top: 10px;
+        padding: 5px 0;
+        background-color: #fcfbfa;
+        display: none; /* Reste géré par le clic ou s'affiche en bloc sur mobile */
+    }
+    .dropdown:hover .submenu {
+        display: block;
+    }
+}
