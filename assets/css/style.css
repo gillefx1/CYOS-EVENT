@@ -1033,19 +1033,30 @@ footer {
     }
 }
 
-/* Configuration Responsive stricte pour l'iPhone */
+/* Configuration Responsive stricte pour l'iPhone (CORRIGÉE & CENTRÉE) */
 @media (max-width: 768px) {
     .main-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-        text-align: center;
+        flex-direction: column !important; /* Force l'empilement vertical */
+        gap: 15px !important;
+        padding: 20px !important;
+        justify-content: center !important; /* Force le centrage des blocs */
+        align-items: center !important;
+        text-align: center !important;
     }
+    
+    /* Force l'élément qui contient le logo à se positionner pile au milieu de l'écran mobile */
+    .main-header .logo {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
     .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 25px;
-        flex-wrap: wrap;
+        width: 100% !important;
+        justify-content: center !important;
+        gap: 25px !important;
+        flex-wrap: wrap !important;
     }
     .submenu {
         position: static;
