@@ -86,17 +86,41 @@
             background-color: #bfa38a;
             color: #ffffff;
         }
+
+        /* AJUSTEMENT DUR RESPONSIVE POUR MOBILE & SMARTPHONE (CENTRAGE STRICT IPHONE) */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero-content .hero-subtitle { font-size: 1rem; }
-            .hero-buttons .btn { width: 100%; max-width: 280px; }
+            .hero-section {
+                padding: 60px 20px;
+            }
+            .hero-content h1 { 
+                font-size: 2.2rem; 
+            }
+            .hero-content .hero-subtitle { 
+                font-size: 1rem; 
+                margin-bottom: 25px;
+            }
+            .hero-content .hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 35px;
+                max-width: 100%;
+            }
+            /* Crée un empilement vertical fluide et force l'alignement centré */
+            .hero-buttons { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 15px; 
+            }
+            .hero-buttons .btn { 
+                width: 100%; 
+                max-width: 280px; 
+                margin: 0 auto; 
+            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- Menu de Navigation Harmonisé (Style Heritage avec Menu Déroulant Event) -->
 <!-- Menu de Navigation Harmonisé (Optimisé iPhone et Sans "À propos") -->
 <header class="main-header">
     <div class="logo">
@@ -105,7 +129,7 @@
         </a>
     </div>
     <nav class="nav-links">
-        <a href="index.html">Accueil</a>
+        <a href="index.html" class="active">Accueil</a>
         
         <!-- Bloc Services converti avec un ID unique pour le contrôle JavaScript mobile -->
         <div class="dropdown" id="mobile-dropdown">
