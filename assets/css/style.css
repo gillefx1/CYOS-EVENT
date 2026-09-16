@@ -922,3 +922,155 @@ footer {
         display: block;
     }
 }
+/* ==========================================================================
+   HARMONISATION EN-TÊTE OPTIMISÉE IPHONE (LOOK HERITAGE)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(51, 50, 48, 0.08);
+    position: relative;
+    z-index: 1000;
+}
+
+.main-header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links > a, 
+.dropdown-toggle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8c857b;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; /* Supprime le flash bleu au clic sur iOS */
+}
+
+.nav-links > a:hover, 
+.nav-links > a.active,
+.dropdown:hover .dropdown-toggle,
+.dropdown.is-open .dropdown-toggle {
+    color: #1a1a19;
+}
+
+/* Structure du Menu Déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .arrow {
+    font-size: 0.6rem;
+    margin-left: 4px;
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+    padding: 15px 0;
+    list-style: none;
+    z-index: 1000;
+    border: 1px solid rgba(51, 50, 48, 0.06);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.submenu li a {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    padding: 10px 25px;
+    color: #595754;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.submenu li a:hover {
+    background-color: #fcfbfa;
+    color: #1a1a19;
+    padding-left: 30px;
+}
+
+/* Comportement au survol uniquement sur Ordinateur */
+@media (min-width: 769px) {
+    .dropdown:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(5px);
+    }
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+/* Configuration Responsive stricte pour l'iPhone */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .submenu {
+        position: static;
+        transform: none !important;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid rgba(51, 50, 48, 0.05);
+        margin-top: 10px;
+        padding: 5px 0;
+        background-color: #fcfbfa;
+        width: 100vw;
+        max-width: 260px;
+        display: none; /* Basculé par l'exécution du script */
+        opacity: 1;
+        visibility: visible;
+    }
+    .submenu li a {
+        text-align: center;
+        padding: 12px 0;
+    }
+    /* Déclencheur CSS de l'accordéon mobile */
+    .dropdown.is-open .submenu {
+        display: block;
+    }
+    .dropdown.is-open .arrow {
+        transform: rotate(180deg);
+    }
+}
