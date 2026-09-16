@@ -1,24 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.burger-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.mobile-click');
+    const dropdown = document.getElementById('mobile-dropdown');
+    const toggle = dropdown.querySelector('.dropdown-toggle');
 
-    // Menu burger principal
-    burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        burger.classList.toggle('toggle');
+    // Interception de l'événement tactile sur smartphone et tablette
+    toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // Annule la redirection immédiate vers services.html
+            dropdown.classList.toggle('is-open'); // Alterne l'affichage de la liste
+        }
     });
 
-    // Gestion intelligente du clic sur smartphone
-    dropdownToggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            // Si le sous-menu n'est pas encore ouvert, on bloque le lien pour l'ouvrir
-            if (!dropdown.classList.contains('open')) {
-                e.preventDefault();
-                dropdown.classList.add('open');
-            }
-            // Si le sous-menu est déjà ouvert, le comportement normal reprend (le lien fonctionne)
+    // Masque automatiquement la liste si l'utilisateur clique ailleurs sur l'écran
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && window.innerWidth <= 768) {
+            dropdown.classList.remove('is-open');
         }
     });
 });
