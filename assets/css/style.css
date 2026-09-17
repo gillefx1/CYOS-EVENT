@@ -1085,19 +1085,20 @@ footer {
         transform: rotate(180deg);
     }
 }
+
 /* ==========================================================================
-   STYLE DE LA SECTION PORTFOLIO (LOOK PREMIUM ÉPURÉ)
+   STYLE PORTFOLIO ACCORDÉON ANIMÉ PREMIUM
    ========================================================================== */
-.portfolio-section {
+.portfolio-accordion-section {
     padding: 80px 20px;
-    background-color: #fcfbfa; /* Blanc chaud / Ivoire harmonisé */
+    background-color: #fcfbfa; /* Blanc chaud / Ivoire */
     text-align: center;
     width: 100%;
     box-sizing: border-box;
 }
 
 .portfolio-title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .portfolio-title h2 {
@@ -1117,91 +1118,89 @@ footer {
     font-weight: 300;
 }
 
-/* Grille de 3 colonnes sur PC, 2 sur tablette, 1 sur iPhone */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* Structure globale de l'accordéon horizontal */
+.accordion-container {
+    display: flex;
+    width: 100%;
     max-width: 1200px;
+    height: 500px; /* Hauteur fixe de ta galerie sur ordinateur */
     margin: 0 auto;
-}
-
-/* Conteneur de chaque photo */
-.portfolio-item {
-    position: relative;
-    aspect-ratio: 1 / 1; /* Force chaque case à être un carré parfait */
     overflow: hidden;
-    background-color: #333230;
-    cursor: pointer;
+    gap: 10px;
 }
 
-.portfolio-item img {
+/* La lamelle individuelle */
+.accordion-item {
+    position: relative;
+    flex: 1; /* Largeur égale par défaut pour les cases fermées */
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Transition d'ouverture fluide */
+}
+
+.accordion-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recadre l'image proprement sans l'écraser */
+    object-fit: cover; /* Empêche la déformation de la photo lors de l'extension */
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Voile noir transparent qui apparaît au survol */
-.portfolio-overlay {
+/* Titre en transparence au bas de chaque photo */
+.accordion-caption {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 0.5); /* Ombre douce */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(transparent, rgba(18, 18, 18, 0.7));
+    padding: 30px 20px 20px 20px;
+    text-align: left;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: opacity 0.4s ease;
 }
 
-.portfolio-overlay span {
+.accordion-caption h3 {
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 5px;
-    transform: translateY(10px);
-    transition: transform 0.4s ease;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
 
-/* Effets interactifs de survol (Hover) */
-.portfolio-item:hover img {
-    transform: scale(1.05); /* Zoom discret de la photo */
+/* ÉTAT ACTIF : La case ouverte prend beaucoup plus de place */
+.accordion-item.active {
+    flex: 4; /* S'ouvre grand par rapport aux autres */
 }
 
-.portfolio-item:hover .portfolio-overlay {
+.accordion-item.active .accordion-caption {
     opacity: 1;
     visibility: visible;
 }
 
-.portfolio-item:hover .portfolio-overlay span {
-    transform: translateY(0);
-}
-
-/* Responsive Tablettes et Smartphones */
-@media (max-width: 900px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
-        gap: 15px;
+/* ==========================================================================
+   ADAPTATION SMARTPHONE (ACCORDÉON COMPACT SUR IPHONE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .accordion-container {
+        flex-direction: column; /* Devient un accordéon vertical sur mobile */
+        height: 550px; /* Hauteur globale du bloc sur écran tactile */
+        gap: 8px;
+    }
+    
+    .accordion-item {
+        width: 100%;
+        flex: 1;
+        transition: flex 0.5s ease;
+    }
+    
+    .accordion-item.active {
+        flex: 3.5; /* La case touchée au doigt s'ouvre vers le bas */
+    }
+    
+    .accordion-caption {
+        padding: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .portfolio-section {
-        padding: 50px 15px;
-    }
-    .portfolio-title h2 {
-        font-size: 1.8rem;
-    }
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* 1 seule colonne alignée sur iPhone */
-        gap: 15px;
-    }
-}
